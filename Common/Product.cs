@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program01
+namespace Common
 {
-    class Product : IComparable
+    public class Product : IComparable
     {
         public Guid Id { get; set; }
         public string Code { get; set; }
@@ -28,7 +28,7 @@ namespace Program01
 
         public override string ToString()
         {
-            return string.Format("Code: {0}; Name: {1}; Price: {2}", Code, Name, Price);
+            return $"Code: {Code}; Name: {Name}; Price: {Price}";
         }
     }
 }
