@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common
 {
@@ -10,8 +6,10 @@ namespace Common
     {
         public Guid Id { get; set; }
         public string Code { get; set; }
+        [UseForEqualityCheck]
         public string Name { get; set; }
-        public string Description { get; set; }
+        [UseForEqualityCheck]
+        public string Description { get; set; }        
         public double Price { get; set; }
 
         public int CompareTo(object obj)

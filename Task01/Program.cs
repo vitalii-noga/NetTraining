@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 
-namespace Program01
+namespace Task01
 {
     class Program
     {
