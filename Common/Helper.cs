@@ -16,11 +16,12 @@ namespace Common
                 var name = names[random.Next(names.Count() - 1)].FirstLetterToUpper();
                 products.Add(new Product()
                 {
-                    Id = new Guid(),
+                    Id = Guid.NewGuid(),
                     Code = name.ToLower() + index,
                     Description = $"Description of {name}",
                     Name = name,
-                    Price = Math.Round(random.NextDouble() * 100, 2)
+                    Price = Math.Round(random.NextDouble() * 100, 2),
+                    Quantity = random.Next(100)
                 });
             }
 

@@ -11,6 +11,7 @@ namespace Common
         [UseForEqualityCheck]
         public string Description { get; set; }        
         public double Price { get; set; }
+        public int Quantity { get; set; }
 
         public int CompareTo(object obj)
         {
@@ -26,7 +27,7 @@ namespace Common
 
         public override string ToString()
         {
-            return $"Code: {Code}; Name: {Name}; Price: {Price}";
+            return $"Code: {Code}; Name: {Name}; Price: {Price}; Quantity: {Quantity}";
         }
     }
 }
