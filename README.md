@@ -30,18 +30,15 @@
 ID <br />
 ClientID <br />
 DateCreated <br />
-Status
-
+Status <br />
 **Client** <br />
 ID <br />
-Name
-
+Name <br />
 **OrderDetails** <br />
 ID <br />
 OrderID <br />
 ProductID <br />
-ProductQuantity
-
+ProductQuantity <br />
 Product Entity should already exist in your model.
 - Generate and Insert Some Products into DB using EF
 - Generate and Insert 10 Clients into DB using EF
