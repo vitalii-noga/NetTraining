@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Common;
+using Common.Entities;
 
 namespace Task02
 {

@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Linq;
 using Common;
+using Common.Entities;
 
 namespace Test03
 {
@@ -9,7 +10,7 @@ namespace Test03
     {
         static void Main(string[] args)
         {
-            using (var db = new ProductContext())
+            using (var db = new NtContext())
             {
                 // Remove all records
                 db.Products.RemoveRange(db.Products);

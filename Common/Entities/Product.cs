@@ -1,17 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace Common
+namespace Common.Entities
 {
     public class Product : IComparable
     {
+        [Required]
         public Guid Id { get; set; }
+        [Required]
         public string Code { get; set; }
+        [Required]
         [UseForEqualityCheck]
         public string Name { get; set; }
         [UseForEqualityCheck]
-        public string Description { get; set; }        
+        public string Description { get; set; }
+        [Required]
         public double Price { get; set; }
+        [Required]
         public int Quantity { get; set; }
+
+        public ICollection<OrderDetails> OrderDetails { get; set; }
 
         public int CompareTo(object obj)
         {

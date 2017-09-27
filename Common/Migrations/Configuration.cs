@@ -5,7 +5,7 @@ namespace Common.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Common.ProductContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Common.Entities.NtContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace Common.Migrations
             ContextKey = "Common.ProductContext";
         }
 
-        protected override void Seed(Common.ProductContext context)
+        protected override void Seed(Common.Entities.NtContext context)
         {
             //  This method will be called after migrating to the latest version.
 
