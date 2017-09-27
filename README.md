@@ -39,7 +39,7 @@ ID <br />
 OrderID <br />
 ProductID <br />
 ProductQuantity <br />
-Product Entity should already exist in your model.
+**Product** Entity should already exist in your model.
 - Generate and Insert Some Products into DB using EF
 - Generate and Insert 10 Clients into DB using EF
 - Generate and insert 1000 Orders into DB:
