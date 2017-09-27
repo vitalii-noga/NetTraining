@@ -25,21 +25,21 @@
 - Read and update data in DB using your context
 
 ## Task 4
-- Create The following Entities in your model:
-**Order**
-ID
-ClientID
-DateCreated
+- Create The following Entities in your model: <br />
+**Order** <br />
+ID <br />
+ClientID <br />
+DateCreated <br />
 Status
 
-**Client**
-ID
+**Client** <br />
+ID <br />
 Name
 
-**OrderDetails**
-ID
-OrderID
-ProductID
+**OrderDetails** <br />
+ID <br />
+OrderID <br />
+ProductID <br />
 ProductQuantity
 
 Product Entity should already exist in your model.
