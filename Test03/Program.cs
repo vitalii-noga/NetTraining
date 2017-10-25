@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
-using Common;
-using Common.Entities;
+using Infrastructure;
+using Infrastructure.Entities;
 
 namespace Test03
 {
@@ -38,7 +38,7 @@ namespace Test03
             Console.Read();
         }
 
-        static void PrintProducts(DbSet<Product> products)
+        static void PrintProducts(DbSet<ProductEntity> products)
         {
             foreach (var product in products)
                 Console.WriteLine(product);

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common;
-using Common.Entities;
 using System.Diagnostics;
 using System.Data.SqlClient;
 using System.Data;
 using System.Xml;
+using Infrastructure;
 
 namespace Test04
 {
@@ -18,11 +17,7 @@ namespace Test04
         {
             using (var db = new NtContext())
             {
-                // Remove all clients, orders, order details and products
-                db.OrderDetails.RemoveRange(db.OrderDetails);
-                db.Orders.RemoveRange(db.Orders);
-                db.Clients.RemoveRange(db.Clients);                
-                db.Products.RemoveRange(db.Products);
+                db.Cleanup();
 
                 // Add 10 clients and 50 products
                 db.Clients.AddRange(Helper.GenerateClients(10));
@@ -53,7 +48,7 @@ namespace Test04
                         {
                             var sw = new Stopwatch();
                             sw.Start();
-                            bulkCopy.WriteToServer(Helper.GenerateOrderDetails(db.Orders.ToList(), db.Products.ToList(), 10));
+                            bulkCopy.WriteToServer(Helper.GenerateOrderDetailsTable(db.Orders.ToList(), db.Products.ToList(), 10));
                             sw.Stop();
                             Console.WriteLine($"\nThe population {db.Orders.Count()} orders with using SqlBulkCopy took {sw.ElapsedMilliseconds} milliseconds.");
                         }

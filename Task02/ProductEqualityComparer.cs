@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Infrastructure.Entities;
 using Common;
-using Common.Entities;
 
 namespace Task02
 {
     // This class compare all fields and properties marked with UseForEqualityCheck attribute
-    class ProductEqualityComparer : IEqualityComparer<Product>
+    class ProductEqualityComparer : IEqualityComparer<ProductEntity>
     {
-        public bool Equals(Product x, Product y)
+        public bool Equals(ProductEntity x, ProductEntity y)
         {
             if (x == null && y == null)
                 return true;
@@ -19,17 +19,17 @@ namespace Task02
             {
                 // Get all equality fields and properties and compare their values
                 return 
-                    CompareItems<FieldInfo>(GetEqualityItems<FieldInfo>(typeof(Product)), x, y) &&
-                    CompareItems<PropertyInfo>(GetEqualityItems<PropertyInfo>(typeof(Product)), x, y);
+                    CompareItems<FieldInfo>(GetEqualityItems<FieldInfo>(typeof(ProductEntity)), x, y) &&
+                    CompareItems<PropertyInfo>(GetEqualityItems<PropertyInfo>(typeof(ProductEntity)), x, y);
             }
         }
 
-        public int GetHashCode(Product obj)
+        public int GetHashCode(ProductEntity obj)
         {
             // Get hash of all equality fields values and properties values
             return
-                (GetHashCodeForEqualityItems<FieldInfo>(GetEqualityItems<FieldInfo>(typeof(Product)), obj) +
-                GetHashCodeForEqualityItems<PropertyInfo>(GetEqualityItems<PropertyInfo>(typeof(Product)), obj)).GetHashCode(); 
+                (GetHashCodeForEqualityItems<FieldInfo>(GetEqualityItems<FieldInfo>(typeof(ProductEntity)), obj) +
+                GetHashCodeForEqualityItems<PropertyInfo>(GetEqualityItems<PropertyInfo>(typeof(ProductEntity)), obj)).GetHashCode(); 
         }        
 
         static List<T> GetEqualityItems<T>(Type type) where T : MemberInfo

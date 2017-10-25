@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Common;
-using Common.Entities;
+using Infrastructure;
+using Infrastructure.Entities;
 
 namespace Task02
 {
@@ -18,7 +18,7 @@ namespace Task02
             PrintProducts(products);
 
             // Get unique products and print it
-            var dict = new Dictionary<Product, string>(new ProductEqualityComparer());
+            var dict = new Dictionary<ProductEntity, string>(new ProductEqualityComparer());
             foreach (var product in products)
             {
                 if (!dict.ContainsKey(product))
@@ -31,7 +31,7 @@ namespace Task02
             Console.Read();
         }
 
-        static void PrintProducts(List<Product> products)
+        static void PrintProducts(List<ProductEntity> products)
         {
             log.Info($"Number of products to print is {products.Count()}.");
             foreach (var product in products)
